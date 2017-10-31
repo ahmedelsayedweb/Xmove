@@ -1,0 +1,593 @@
+#menupara{
+    display: none
+}
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing:border-box
+}
+/*start contact-header*/
+@media (max-width:767px) {
+    .contact-header{
+        display: none
+    }
+    .contact-sec li{
+        display: block;
+    }
+    .socials{
+        margin-top: 25px
+    }
+}
+.contact-header{
+    border-bottom: 1px solid #cbc8c8;
+}
+.contact-sec {
+    float: left;
+    margin: 1%;
+}
+.contact-sec  li{
+    margin-right: 10px;
+}
+.contact-sec li a{
+     color: black;
+     text-decoration: none
+}
+.contact-sec li:hover a{
+    color: orange
+}
+.contact-sec li:hover{
+    color: orange;
+    cursor: pointer
+}
+.socials{
+    float: right;
+    margin: 1%
+}
+.socials a{
+    color: black;
+    margin-right: 10px;
+    transition: color 0.5s linear;
+}
+.socials a:hover{
+    color: orange;
+}
+/*End Contact header*/
+/*Start header*/
+.header{
+    height: auto;
+    background-color: white;
+    
+}
+@media (max-width:767px) {
+    .header{
+        text-align: center
+    }
+    .header ul{
+        display: none;
+        position: absolute;
+        top: 60%;
+        z-index: 999;
+        text-align: left;
+        background-color: white;
+        width: 90%;
+        margin: auto;
+    }
+    .header ul li{
+        display: block;
+        padding: 20px
+    }
+    .header img{
+        width: 30%
+    }
+}
+.header img{
+    float: left;
+    margin: 1%;
+}
+@media (max-width:767px) {
+    .header img {
+        float: none;
+        margin: auto;
+        width: 90%
+    }
+}
+.header ul{
+    float: right;
+    margin-top:3%;
+}
+@media (max-width:990px) {
+    .header ul{
+        float: none
+    }
+}
+.header ul a{
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 12pt;
+}
+.header ul a:hover{
+    color: orange
+}
+/*End Header*/
+/*Start HEader-image*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header-img{
+    background-image: url(../images/banner-6.jpg);
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    color: white
+}
+.header-img h3{
+    font-size: 20pt;
+    font-weight: bolder;
+    line-height: 40px;
+}
+.header-img span{
+    width: 150px;
+    height: 5px;
+    font-size: 20pt;
+}
+.header-img p{
+    line-height: 30px;
+    font-size: 20px;
+}
+.header-img h5{
+    font-size: 20pt;
+}
+.header-img button{
+    border: none;
+    background-color: #f68520;
+    color: white;
+    width: 200px;
+    margin-left: 20px;
+    transition: all 0.5s linear;
+    font-weight: bolder;
+    padding: 15px
+}
+.header-img button:hover{
+    background-color: white;
+    color: #f68520
+}
+.header-img .par{
+    margin-top: 160px
+}
+@media (max-width:767px) {
+    .header-img .par{
+        margin-top: 50px
+    }
+}
+/*End HEader-image*/
+/*Start Search*/
+.search{
+    padding: 20px;
+    background-color: white;
+    height: auto;
+    color: black
+}
+.search .btn{
+    background-color: transparent !important;
+    width: 100% 
+}
+.search .search1 {
+    margin-top: 50px
+}
+.search .dropdown-menu{
+    width: 100%;
+    background-color: #b9b9b9;
+    text-align: center
+}
+.search .search1 input{
+    width: 100%;
+    border:none;
+    background-color: transparent;
+    color: black;
+    border-radius: 5px;
+    outline: none;
+}
+.search .searchbtn input[type=text]:focus{
+    border: 2px solid #5a7a8e;
+}
+.search .searchbtn{
+    margin-top: 50px
+}
+.search .searchbtn button{
+    width: 200px;
+    padding: 15px;
+    border: none;
+    background-color: #f68520;
+    font-weight: bolder;
+    transition: all 0.5s linear;
+    color: white
+}
+
+#border, .search input[type=text]{
+    border:2px solid #f68520 !important;
+    padding: 3% 5% !important
+}
+/*End Search*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Start emilla*/
+.emilla{
+    height: auto;
+    padding: 40px;
+    background-color: #ffb630;
+    border-bottom: 1px solid white;
+}
+.emilla h2{
+    font-size: 20pt;
+    font-weight: bolder;
+    color: black;
+}
+
+.emilla .icons i p{
+    margin: 1%;
+}
+.icons{
+    display: inline-block;
+    color: black;
+    text-align: center;
+}
+@media (max-width:767px) {
+    .emilla {
+        text-align: center
+    }
+    .icons{
+        text-align: center;
+    }
+}
+/*End emilla*/
+/*start flat*/
+
+
+.flat{
+    padding: 50px;
+    background:linear-gradient(#ffb630, #fff);
+    background:-webkit-linear-gradient(#ffb630, #fff);
+    background:-moz-linear-gradient(#ffb630, #fff);
+    background:-o-linear-gradient(#ffb630, #fff);
+    color: white;
+}
+.flatone{
+    margin-top: 50px
+}
+.flat .flatone .icons{
+    width: 100%;
+    height: 60px;
+    background-color: blueviolet;
+}
+.flat .flatone .icons .icon{
+    background-color: #3e3e3e;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid white
+}
+.flat .flatone .icons .icon .price{
+    display: inline-block;
+    color:white;
+}
+.flat .flatone .paragraphs{
+    width: 100%;
+    background-color: black;
+    padding: 15px;
+    text-align: left;
+    color: white;
+    font-weight: bolder;
+}
+.flat .flatone .contact{
+    width: 100%;
+    background-color: #3e3e3e;
+    color: white;
+    padding: 20px;
+    border-top: 1px solid white
+}
+.flatone .contact h3{
+    color: orange;
+    font-weight: bolder;
+    margin-top: 5px
+}
+
+
+.sale{
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    position: absolute;
+    left: 70%;
+    top: -20px
+}
+
+
+
+
+/*end flat*/
+
+
+
+
+
+/*Service*/
+.service {
+    padding: 35px 0px;
+    background-color: black;
+    font-size: 20px;
+    color: white
+}
+.service .iconone{
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    border-radius: 50%;
+    text-align: center;
+    color: orange;
+    margin: 0 auto;
+    transition: all 0.5s linear;
+}
+.service .iconone i{
+    margin: 10px
+}
+.service .icons:hover{
+    cursor: pointer;
+}
+.service .icons:hover .iconone{
+    cursor: pointer;
+    background-color: orange;
+    color: white;
+}
+.service .icons p{
+    font-size: 15px;
+    font-weight: bolder;
+    color: white
+}
+P{
+    line-height: 30px
+}
+.service h3{
+    font-weight: bolder;
+    color: white
+}
+/*End Service*/
+
+
+
+/*Our Agents*/
+.our-agents{
+    height: auto;
+    padding-top: 20px
+}
+.our-agents .agents{
+    width: 250px;
+    margin-bottom: 90px;
+}
+.head{
+    margin-bottom: 50px
+}
+.our-agents .agents img{
+    filter: grayscale(50%);
+    transition: all 0.5s linear;
+    margin:  auto
+}
+.our-agents .agents img:hover{
+    filter: grayscale(0%);
+    transform: scale(1.1, 1.1);
+}
+/*End Our Agents*/
+
+
+/*Start Provi*/
+.provi{
+    background-image: url(../images/banner-agent-single.jpg);
+    background-size: cover;
+    padding: 50px;
+    background-attachment: fixed;
+}
+.provi .paragraphss{
+    margin-top: 50px;
+    color: #ffffff;
+    font-size: 20px
+    
+}
+.provi .paragraphss button{
+    border: none;
+    background-color: orange;
+    color: white;
+    font-size: 18pt;
+    transition: all 0.5s linear;
+    width: 200px;
+    height: 70px;
+    padding: 10px
+}
+/*End Provi*/
+
+
+
+
+
+
+
+
+/*Start Client*/
+.clients{
+    padding: 50px;
+}
+.clients .h1 , p{
+        font-weight: bolder;
+}
+.clients .clientone{
+    padding: 20px;
+    background-color: transparent;
+    transition: all 0.5s linear;
+}
+.clients .clientone:hover{
+    transform: scale(1.1, 1.1);
+    box-shadow: 10px 10px 25px grey;
+    z-index: 99
+}
+.clients .clientone .said{
+    border: 1px solid #cbc6c6;
+    padding: 20px;
+    text-align: left;
+    background-color: transparent;
+}
+
+@media (max-width:583px){
+    .clients .clientone{
+        margin-bottom: 50px
+    }
+}
+/*End clients*/
+/*Start Iconss*/
+.iconss{
+    padding: 20px;
+    background-color: black
+}
+/*End Iconss*/
+/*Start Form*/
+.form{
+    padding: 50px;
+    background-image: url(../images/banner-agent-single.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.form .section1{
+    background-color: white;
+    text-align: left;
+    padding: 30px;
+    color: #515554;
+}
+.form h4{
+    font-weight: bolder
+}
+.form .section2{
+    background-color: #f68520;
+    text-align: left;
+    padding: 30px;
+    height: 500px
+}
+.contact .div{
+    padding: 20px;
+    font-size: 12pt;
+    padding-left: 0px 
+}
+.contact .div:hover{
+    color: #f68520;
+    cursor: pointer
+}
+.contact .div i{
+    margin-right: 2%
+}
+.section2 form{
+    width: 100%;
+}
+form input{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid white;
+    color: white
+}
+form button{
+    width: 100%;
+    border: none;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: white;
+    color: #f68520;
+    font-size: 20px;
+    transition: all 0.5s linear;
+    font-weight: bolder
+}
+
+/*End Form*/
+/*Start Footer*/
+.footer{
+    background-color: #fff;
+    padding: 50px;
+    color: black !important
+}
+.footer .logo i{
+    font-size: 25pt;
+    
+}
+#c{
+    margin-top: 20px;
+    transition: all 0.5s linear;
+    margin-right: 10px
+}
+#c:hover{
+    color: #f68520;
+    cursor: pointer
+}
+.footer ul{
+    list-style: none
+}
+.footer ul li {
+    padding: 10px;
+    
+}
+.footer li a{
+    color: black;
+    font-weight: bolder;
+}
+.logo img{
+    margin: 1%
+}
+/*End Footer*/
+.up{
+    background-color: rgba(0, 0, 0, 0.79);
+    margin: 15px;
+    color: white;
+    padding: 5px;
+    position: fixed;
+    z-index: 999;
+    bottom: -10px;
+    left: 90%;
+    display: none
+}
+.up:hover{
+    cursor: pointer
+}
+h2.h1.wow.bounceInUp {
+    padding: 0;
+    margin: 0;
+}
