@@ -283,6 +283,11 @@
     background-color: #fff;
     color: #333;
 }
+.flat2{
+    padding: 50px;
+    background-color: #3e3e3e;
+    color: #333;
+}
 .flatone{
     margin-top: 50px
 }
@@ -309,6 +314,11 @@
     text-align: left;
     color: white;
     font-weight: bolder;
+}
+.flat .flatone .paragraphs a{
+    color: white;
+    font-weight: bolder;
+	    text-decoration: none;
 }
 .flat .flatone .contact{
     width: 100%;
@@ -418,7 +428,6 @@ P{
     background-attachment: fixed;
 }
 .provi .paragraphss{
-    margin-top: 50px;
     color: #ffffff;
     font-size: 20px
     
@@ -517,10 +526,22 @@ P{
 .section2 form{
     width: 100%;
 }
-form input{
+form input {
     display: block;
     width: 100%;
     margin-top: 10px;
+    padding: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid white;
+    color: white
+}
+textarea{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+	max-height: 100px;
     padding: 20px;
     background-color: transparent;
     border: none;
@@ -543,7 +564,7 @@ form button{
 /*End Form*/
 /*Start Footer*/
 .footer{
-    background-color: #fff;
+    background-color: #f68520;
     padding: 50px;
     color: black !important
 }
@@ -609,6 +630,8 @@ select#lang_choice_polylang-2 {
 }
 img.article_photo_img {
     width: 97%;
+	min-height: 270px;
+    max-height: 270px;
 }
 time.article__time {
     position: absolute;
@@ -616,6 +639,7 @@ time.article__time {
     background-color: #333;
     color: #fff;
     padding: 10px;
+	    font-size: 23px;
     right: 0;
 }
 .article_item {
@@ -689,4 +713,63 @@ a.socal {
     border-radius: 5px;
 	text-decoration: none;
     padding: 8px 30px;
+}
+.provi h4.h3 {
+    color: #fff;
+    font-size: 36px;
+    margin: 0;
+}
+h2.news_t {
+    margin-bottom: 30px;
+    margin-top: 0;
+    font-size: 35px;
+}
+.flatone img {
+    width: 100%;
+    max-height: 200px;
+	min-height: 200px;
+}
+.icon span {
+    margin-right: 13px;
+    font-size: 16px;
+}
+i.fa.fa-map-marker {
+    font-size: 20px;
+}
+.contact span {
+    font-size: 19px;
+}
+.entry-main .price {
+    color: #fff;
+    display: inline-block;
+}
+.flat2 h2.h2 {
+    color: #fff;
+    font-size: 35px;
+    margin: 0;
+}
+.flat2 .flatone .icons .icon{
+	    background-color: #3e3e3e;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid white;
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+}
+.flat2 .flatone .contact {
+    width: 100%;
+    background-color: #fbfbfb;
+    color: #333;
+    padding: 20px;
+    border-top: 1px solid white;
+}
+.copyright {
+    padding: 20px;
+    text-align: center;
+    display: block;
+    background-color: #333;
+    float: left;
+	font-size: 15px;
+    width: 100%;
+    color: #fff;
 }

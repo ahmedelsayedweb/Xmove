@@ -115,185 +115,71 @@
             </div>
         </div>
         <!-- end EMILLA -->
+<?php
+			$cats = [];
+						$args = array(
+								'post_type' => 'projects',
+								'posts_per_page' => 6,
+						);
+						$product_query = new WP_Query( $args );
+							 ?>
+						<?php if ( $product_query->have_posts() ) : ?>
+			<?php $i = 1; ?>
+							<?php while ($product_query->have_posts()) : $product_query->the_post(); 
+			$categories = get_the_category();
+			$cats = array_merge($cats, $categories);
+			?>
+			<?php endwhile; endif; ?>
         <!--start flats-->
         <div class="flat col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" id="projects">
             <div class="container wow fadeInUp" data-wow-offset="300">
                 <h2 class="h2">PROJECTS</h2>
-                <p>Haven't you heard about the recession: Topten reasons why you should properties</p>
+				<?php if ( $product_query->have_posts() ) : ?>
+			<?php $i = 0; ?>
+			<?php while ($product_query->have_posts()) : $product_query->the_post();
+			$categories = get_the_category();
+			$slug = '';
+			foreach($categories  as $cat){
+			if(isset($cat->slug)){
+				$slug .= $cat->slug;
+			}
+			}
+			?>
+				<div class="tab-panel <?php echo $class; ?>" id="<?php echo $slug; ?>">
                 <div class="flatone col-lg-4 col-md-4">
-                    <div class="sale">FOR SALE</div>
-                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/banner-6.jpg" class="img-responsive">
+                    <div class="sale"><?php the_field('sale'); ?></div>
+                    <a href="<?php the_permalink(); ?>">
+						<img src="<?php the_post_thumbnail_url(); ?>">
+					</a>
                     <div class="icons text-center">
                         <div class="icon">
                             <div class="price">
-                                <i class="fa fa-home fa-2x" aria-hidden="true"></i>
-                                <span>17000$</span>
-                            </div>
-                            <div class="price">
                                 <i class="fa fa-shower fa-2x" aria-hidden="true"></i>
-                                <span>2 bathrooms</span>
+                                <span><?php the_field('bathrooms'); ?></span>
                             </div>
                             <div class="price">
                                 <i class="fa fa-bed fa-2x" aria-hidden="true"></i>
-                                <span>2 Bed Rooms</span>
+                                <span><?php the_field('bed_rooms'); ?></span>
                             </div>
                         </div>
                     </div>
                     <div class="paragraphs">
-                        <h3 class="h2">Trentino-Alto Adige</h3>
-                        <p>Duis aute irure dolor in repre in voluptate velit es sint cillumor dolore eu fugiat</p>
+                       <a href="<?php the_permalink(); ?>">
+						   <h3 class="h2"><?php the_title() ?></h3>
+						</a>
+                        <?php the_excerpt(); ?>
                     </div>
                     <div class="contact">
                         <i class="fa fa-map-marker"></i>
-                        <span>568 E 1st Ave, Ney Jersey</span>
-                        <h3>$765,300</h3>
+                        <span><?php the_field('location'); ?></span>
+                        <h3><?php the_field('price'); ?></h3>
                     </div>
                 </div>
-                <div class="flatone col-lg-4 col-md-4">
-                    <div class="sale">FOR SALE</div>
-                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/banner-6.jpg" class="img-responsive">
-                    <div class="icons text-center">
-                        <div class="icon">
-                            <div class="price">
-                                <i class="fa fa-home fa-2x" aria-hidden="true"></i>
-                                <span>17000$</span>
-                            </div>
-                            <div class="price">
-                                <i class="fa fa-shower fa-2x" aria-hidden="true"></i>
-                                <span>2 bathrooms</span>
-                            </div>
-                            <div class="price">
-                                <i class="fa fa-bed fa-2x" aria-hidden="true"></i>
-                                <span>2 Bed Rooms</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="paragraphs">
-                        <h3 class="h2">Trentino-Alto Adige</h3>
-                        <p>Duis aute irure dolor in repre in voluptate velit es sint cillumor dolore eu fugiat</p>
-                    </div>
-                    <div class="contact">
-                        <i class="fa fa-map-marker"></i>
-                        <span>568 E 1st Ave, Ney Jersey</span>
-                        <h3>$765,300</h3>
-                    </div>
-                </div>
-                <div class="flatone col-lg-4 col-md-4">
-                    <div class="sale">FOR SALE</div>
-                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/banner-6.jpg" class="img-responsive">
-                    <div class="icons text-center">
-                        <div class="icon">
-                            <div class="price">
-                                <i class="fa fa-home fa-2x" aria-hidden="true"></i>
-                                <span>17000$</span>
-                            </div>
-                            <div class="price">
-                                <i class="fa fa-shower fa-2x" aria-hidden="true"></i>
-                                <span>2 bathrooms</span>
-                            </div>
-                            <div class="price">
-                                <i class="fa fa-bed fa-2x" aria-hidden="true"></i>
-                                <span>2 Bed Rooms</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="paragraphs">
-                        <h3 class="h2">Trentino-Alto Adige</h3>
-                        <p>Duis aute irure dolor in repre in voluptate velit es sint cillumor dolore eu fugiat</p>
-                    </div>
-                    <div class="contact">
-                        <i class="fa fa-map-marker"></i>
-                        <span>568 E 1st Ave, Ney Jersey</span>
-                        <h3>$765,300</h3>
-                    </div>
-                </div>
-                <div class="flatone col-lg-4 col-md-4">
-                    <div class="sale">FOR SALE</div>
-                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/banner-6.jpg" class="img-responsive">
-                    <div class="icons text-center">
-                        <div class="icon">
-                            <div class="price">
-                                <i class="fa fa-home fa-2x" aria-hidden="true"></i>
-                                <span>17000$</span>
-                            </div>
-                            <div class="price">
-                                <i class="fa fa-shower fa-2x" aria-hidden="true"></i>
-                                <span>2 bathrooms</span>
-                            </div>
-                            <div class="price">
-                                <i class="fa fa-bed fa-2x" aria-hidden="true"></i>
-                                <span>2 Bed Rooms</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="paragraphs">
-                        <h3 class="h2">Trentino-Alto Adige</h3>
-                        <p>Duis aute irure dolor in repre in voluptate velit es sint cillumor dolore eu fugiat</p>
-                    </div>
-                    <div class="contact">
-                        <i class="fa fa-map-marker"></i>
-                        <span>568 E 1st Ave, Ney Jersey</span>
-                        <h3>$765,300</h3>
-                    </div>
-                </div>
-                <div class="flatone col-lg-4 col-md-4">
-                    <div class="sale">FOR SALE</div>
-                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/banner-6.jpg" class="img-responsive">
-                    <div class="icons text-center">
-                        <div class="icon">
-                            <div class="price">
-                                <i class="fa fa-home fa-2x" aria-hidden="true"></i>
-                                <span>17000$</span>
-                            </div>
-                            <div class="price">
-                                <i class="fa fa-shower fa-2x" aria-hidden="true"></i>
-                                <span>2 bathrooms</span>
-                            </div>
-                            <div class="price">
-                                <i class="fa fa-bed fa-2x" aria-hidden="true"></i>
-                                <span>2 Bed Rooms</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="paragraphs">
-                        <h3 class="h2">Trentino-Alto Adige</h3>
-                        <p>Duis aute irure dolor in repre in voluptate velit es sint cillumor dolore eu fugiat</p>
-                    </div>
-                    <div class="contact">
-                        <i class="fa fa-map-marker"></i>
-                        <span>568 E 1st Ave, Ney Jersey</span>
-                        <h3>$765,300</h3>
-                    </div>
-                </div>
-                <div class="flatone col-lg-4 col-md-4">
-                    <div class="sale">FOR SALE</div>
-                    <img src="<?php bloginfo('template_directory'); ?>/assets/images/banner-6.jpg" class="img-responsive">
-                    <div class="icons text-center">
-                        <div class="icon">
-                            <div class="price">
-                                <i class="fa fa-home fa-2x" aria-hidden="true"></i>
-                                <span>17000$</span>
-                            </div>
-                            <div class="price">
-                                <i class="fa fa-shower fa-2x" aria-hidden="true"></i>
-                                <span>2 bathrooms</span>
-                            </div>
-                            <div class="price">
-                                <i class="fa fa-bed fa-2x" aria-hidden="true"></i>
-                                <span>2 Bed Rooms</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="paragraphs">
-                        <h3 class="h2">Trentino-Alto Adige</h3>
-                        <p>Duis aute irure dolor in repre in voluptate velit es sint cillumor dolore eu fugiat</p>
-                    </div>
-                    <div class="contact">
-                        <i class="fa fa-map-marker"></i>
-                        <span>568 E 1st Ave, Ney Jersey</span>
-                        <h3>$765,300</h3>
-                    </div>
-                </div>
+				</div>
+				<?php $i++;
+									?>
+							
+			<?php endwhile; endif; ?>
             </div>
         </div>
         <!--end Flats-->
@@ -308,7 +194,6 @@
         <!--Our Service-->
         <div class="service col-xs-12 text-center"  style="overflow: hidden" id="proper">
             <h2 class="h1 wow bounceInUp" data-wow-offset="300">OUR SERVICE</h2>
-            <p class="wow bounceInUp" data-wow-offset="300">Psum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
 			<?php $i = 1; ?>
 				<?php while ($team_query->have_posts()) : $team_query->the_post(); ?>
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 icons wow bounceInLeft" data-wow-offset="300">
@@ -326,8 +211,7 @@
         <div class="our-agents text-center col-lg-12 col-md-12 col-sm-12 col-xs-12" id="agents">
             <div class="container">
                     <div class="head wow bounceInUp" data-wow-offset="300">
-                        <h2 class="h1">OUR AGENTS</h2>
-                        <p>One day however a small line of blind text by the name of Lorem Ipsum decided to</p>
+						<h2 class="h1">OUR AGENTS</h2>
                     </div>
                 <div class="owl-carousel owl-theme">
 					<?php 
@@ -362,6 +246,7 @@
         <!--start Provi-->
         <div class="provi col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center flat" style="overflow: hidden" id="blog">
             <div class="container">
+				<h4 class="h3">Careers</h4>
 				<?php $i = 0; ?>
 	<?php while ($team_query->have_posts()) : $team_query->the_post(); ?>
                 <div class="paragraphss wow bounceInUp" data-wow-offset="300">
@@ -386,7 +271,7 @@
         <!--Start Client-->
         <div class="clients col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="overflow: hidden" id="page">
             <div class="container">
-                <h2 class="h1">NEWS</h2>
+                <h2 class="news_t">NEWS</h2>
 				<?php
 						$args = array(
 								'post_type' => 'news',
@@ -462,14 +347,13 @@
                 <div class="col-lg-6 section1 wow bounceInUp" data-wow-offset="400">
                     <div class="contact">
                         <h4 class="h3">CONTACT</h4>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.</p>
                         <div class="div">
                             <i class="fa fa-map-marker"></i>
                             <span><?php echo $address; ?></span>
                         </div>
                         <div class="div">
                             <i class="fa fa-phone"></i>
-                            <span><?php echo $address; ?></span>
+                            <span><?php echo $call; ?></span>
                         </div>
                         <div class="div">
                             <i class="fa fa-envelope-o" aria-hidden="true"></i>
@@ -479,13 +363,22 @@
                 </div>
                 <div class="col-lg-6 section2 wow bounceInDown" data-wow-offset="400">
                     <h4 class="h3">NEWSLETTER</h4>
-                    <p>Subcribe to receive new properties with good price.</p>
                     <div>
                         <form>
+							<?php
+				  $lang = custom_get_current_lang();
+    				if($lang == 'ar'){
+						 echo do_shortcode('[contact-form-7 id="68" title="NEWSLETTER"]'); 
+						}elseif($lang == 'en'){
+						echo do_shortcode('[contact-form-7 id="68" title="NEWSLETTER"]'); 
+					};
+				  	?> 
+<!--
                             <input type="text" placeholder="Your Name">
                             <input type="text" placeholder="Your Email">
                             <input type="text" placeholder="Your Message">
                             <button>SEND MESSAGE</button>
+-->
                         </form>
                     </div>
                 </div>

@@ -31,7 +31,6 @@
                     <a class="socal" href="<?php echo $instagram; ?>"><i class="fa fa-instagram fa-2x"></i></a>
                 </div>
                 <div class="logo col-lg-4 col-md-4 col-sm-12 col-xs-12 wow bounceInUp" data-wow-offset="300">
-                    <h2>Recent New</h2>
                     <?php
 					if(is_active_sidebar('Footer Sidebar 1 ')){
 					dynamic_sidebar('Footer Sidebar 1 ');
@@ -57,6 +56,13 @@
 					?>
                 </div>
             </div>
+        </div>
+<div class="copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12">© <?php echo date ('Y'); ?>. All Rights Reserved | Design & Developer by <?php bloginfo('name'); ?></div>
+            </div>
+          </div>
         </div>
         <!--End Footer-->
         <!--start angle up-->
