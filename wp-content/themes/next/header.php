@@ -3,8 +3,12 @@
 <?php  
     if ( function_exists( 'ot_get_option' ) ) {
 	  $logo_image = ot_get_option( 'logo' );
-	  $logo_thumbnail = ot_get_option( 'logo_thumbnail' );
 	  $favicon = ot_get_option( 'favicon' );
+	  $instagram = ot_get_option( 'instagram' );
+	  $facebook = ot_get_option( 'facebook' );
+	  $linkedin = ot_get_option( 'linkedin' );
+	  $call = ot_get_option( 'phone' );
+	  $address = ot_get_option( 'address' );
 	}
     ?>
 	<head>
@@ -14,7 +18,7 @@
 		<meta name="description" content="">
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="shortcut icon" type="image/ico" href="<?php echo $logo_thumbnail; ?>" />
+		<link rel="shortcut icon" type="image/ico" href="<?php echo $favicon; ?>" />
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 		<?php wp_head(); ?>
 	</head>
@@ -23,26 +27,18 @@
         <div class="contact-header col-lg-12 col-md-12 col-sm-12 col-xs-12" style="overflow: hidden">
             <div class="container">
                 <ul class="list-inline contact-sec">
-                    <li>
-                        <i class="fa fa-globe"></i>
-                        <a href="#">
-                            English
-                        </a>
-                        <i class="fa fa-angle-down"></i>
-                            <ul class="hidden">
-                                <li>Arabic</li>
-                            </ul>
-                    </li>
-                    <li><i class="fa fa-phone"></i> 0115982303211</li>
-                    <li><i class="fa fa-map-marker"></i> Global@Eccomerce.com</li>
+                    <?php
+					if(is_active_sidebar('header')){
+					dynamic_sidebar('header');
+					}
+					?>
+                    <li><i class="fa fa-phone"></i> <?php echo $call; ?></li>
+                    <li><i class="fa fa-map-marker"></i> <?php echo $address; ?></li>
                 </ul>
                 <div class="socials">
-                    <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
-                    <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
-                    <a href="#"><i class="fa fa-pinterest fa-2x"></i></a>
-                    <a href="#"><i class="fa fa-rss fa-2x"></i></a>
-                    <a href="#"><i class="fa fa-instagram fa-2x"></i></a>
-                    <a href="#"><i class="fa fa-dribbble fa-2x"></i></a>
+                    <a href="<?php echo $facebook; ?>"><i class="fa fa-facebook-square fa-2x"></i></a>
+                    <a href="<?php echo $linkedin; ?>"><i class="fa fa-linkedin fa-2x"></i></a>
+                    <a href="<?php echo $instagram; ?>"><i class="fa fa-instagram fa-2x"></i></a>
                 </div>
             </div>  
         </div>
@@ -53,11 +49,11 @@
             <div class="container">
                     <img src="<?php bloginfo('template_directory'); ?>/assets/images/logo.png" class="img-responsive col-lg-3 col-md-3 col-sm-12 col-xs-12" id="image-menu">
                 <ul class="list-inline col-lg-6" id="nav-menu">
-                    <li><a href="#home">HOME</a><i class="fa fa-angle-down"></i></li>
-                    <li><a href="#agents">AGENTS</a><i class="fa fa-angle-down"></i></li>
-                    <li><a href="#proper">PROPERTY</a><i class="fa fa-angle-down"></i></li>
-                    <li><a href="#blog">BLOG</a><i class="fa fa-angle-down"></i></li>
-                    <li><a href="#page">PAGE</a><i class="fa fa-angle-down"></i></li>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#projects">PROJECTS</a></li>
+                    <li><a href="#proper">SERVICES</a></li>
+                    <li><a href="#blog">CAREERS</a></li>
+                    <li><a href="#page">NEWS</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>

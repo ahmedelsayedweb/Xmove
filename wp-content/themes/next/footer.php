@@ -24,38 +24,37 @@
                     <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur.</p>
                     <br>
                     <i class="fa fa-phone fa-2x"></i>
-                    <span>22664-5451-55</span>
+                    <span><?php echo $phone; ?></span>
                     <br>
-                    <i class="fa fa-facebook-square fa-2x" id="c"></i>
-                    <i class="fa fa-skype fa-2x" aria-hidden="true" id="c"></i>
-                    <i class="fa fa-google-plus-square fa-2x" aria-hidden="true" id="c"></i>
-                    <i class="fa fa-twitter-square fa-2x" id="c"></i>
-                    <i class="fa fa-codepen fa-2x" id="c"></i>
+					 <a class="socal" href="<?php echo $facebook; ?>"><i class="fa fa-facebook-square fa-2x"></i></a>
+                    <a class="socal" href="<?php echo $linkedin; ?>"><i class="fa fa-linkedin fa-2x"></i></a>
+                    <a class="socal" href="<?php echo $instagram; ?>"><i class="fa fa-instagram fa-2x"></i></a>
                 </div>
                 <div class="logo col-lg-4 col-md-4 col-sm-12 col-xs-12 wow bounceInUp" data-wow-offset="300">
-                    <h2>USEFUL LINKS</h2>
-                    <ul class="list-group">
-                        <li class="col-sm-6 col-xs-6"><a href="#">Introduction</a></li>
-                        <li class="col-sm-6 col-xs-6"><a href="#">Our Approach</a></li>
-                        <li class="col-sm-6 col-xs-6"><a href="#">Support Forum</a></li>
-                        <li class="col-sm-6 col-xs-6"><a href="#">Help Center</a></li>
-                        <li class="col-sm-6 col-xs-6"><a href="#">Layout Features</a></li>
-                        <li class="col-sm-6 col-xs-6"><a href="#">Fre Questions</a></li>
-                        <li class="col-sm-6 col-xs-6"><a href="#">Return Policy</a></li>
-                        <li class="col-sm-6 col-xs-6"><a href="#">Send a Question</a></li>
-                        <li class="col-sm-6 col-xs-6"><a href="#">Our Process</a></li>
-                        <li class="col-sm-6 col-xs-6"><a href="#">Support Center</a></li>
-                        <li class="col-sm-6 col-xs-6"><a href="#">Join Team</a></li>
-                    </ul>
+                    <h2>Recent New</h2>
+                    <?php
+					if(is_active_sidebar('Footer Sidebar 1 ')){
+					dynamic_sidebar('Footer Sidebar 1 ');
+					}
+					?>
                 </div> 
+				<?php
+			if ( function_exists( 'ot_get_option' ) ) {
+				$images = explode( ',', ot_get_option( 'gallery_footer', '' ) );
+?>
                 <div class="logo col-lg-4 col-md-4 col-sm-12 col-xs-12 wow bounceInRight" data-wow-offset="200">
                     <h3>GALLERIES</h3>
-                    <img src="images/avatars/avatar-1.jpg" width="100">
-                    <img src="images/avatars/avatar-2.jpg" width="100">
-                    <img src="images/avatars/avatar-12.jpg" width="100">
-                    <img src="images/avatars/avatar-1.jpg" width="100">
-                    <img src="images/avatars/avatar-1.jpg" width="100">
-                    <img src="images/avatars/avatar-12.jpg" width="100">
+					<?php
+								if ( ! empty( $images ) ) {
+							foreach( $images as $id ) {
+								if ( ! empty( $id ) ) {
+							$full_img_src = wp_get_attachment_image_src( $id, 'custom-thumb' );
+								  echo '<img src="' . $full_img_src[0] . '" width="100" >';
+								}
+							  }
+							}	
+						}
+					?>
                 </div>
             </div>
         </div>

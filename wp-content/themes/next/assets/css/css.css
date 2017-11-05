@@ -174,17 +174,21 @@
 /*End HEader-image*/
 /*Start Search*/
 .search{
-    padding: 20px;
+    margin: 20px;
+    padding-bottom: 20px;
     background-color: white;
     height: auto;
-    color: black
+    color: black;
+    position: absolute;
+    top: 20px;
+    right: 7%;
 }
 .search .btn{
     background-color: transparent !important;
     width: 100% 
 }
 .search .search1 {
-    margin-top: 50px
+    margin-top: 20px
 }
 .search .dropdown-menu{
     width: 100%;
@@ -205,19 +209,20 @@
 .search .searchbtn{
     margin-top: 50px
 }
-.search .searchbtn button{
-    width: 200px;
-    padding: 15px;
+.search .searchbtn button ,input.wpcf7-form-control.wpcf7-submit{
+    padding: 10px;
     border: none;
     background-color: #f68520;
     font-weight: bolder;
     transition: all 0.5s linear;
-    color: white
+    color: white;
+	    margin-top: 25px;
 }
 
-#border, .search input[type=text]{
+#border, .search input[type=text],.search input[type=email]{
     border:2px solid #f68520 !important;
-    padding: 3% 5% !important
+    padding: 3% 5% !important;
+	width: 100%;
 }
 /*End Search*/
 
@@ -275,11 +280,8 @@
 
 .flat{
     padding: 50px;
-    background:linear-gradient(#ffb630, #fff);
-    background:-webkit-linear-gradient(#ffb630, #fff);
-    background:-moz-linear-gradient(#ffb630, #fff);
-    background:-o-linear-gradient(#ffb630, #fff);
-    color: white;
+    background-color: #fff;
+    color: #333;
 }
 .flatone{
     margin-top: 50px
@@ -287,7 +289,8 @@
 .flat .flatone .icons{
     width: 100%;
     height: 60px;
-    background-color: blueviolet;
+    background-color: #3e3e3e;
+    color: #fff;
 }
 .flat .flatone .icons .icon{
     background-color: #3e3e3e;
@@ -302,7 +305,7 @@
 .flat .flatone .paragraphs{
     width: 100%;
     background-color: black;
-    padding: 15px;
+    padding: 15px 12px;
     text-align: left;
     color: white;
     font-weight: bolder;
@@ -319,7 +322,9 @@
     font-weight: bolder;
     margin-top: 5px
 }
-
+.provi h3.h2 {
+    font-size: 22px;
+}
 
 .sale{
     width: 50px;
@@ -333,16 +338,6 @@
     top: -20px
 }
 
-
-
-
-/*end flat*/
-
-
-
-
-
-/*Service*/
 .service {
     padding: 35px 0px;
     background-color: black;
@@ -350,15 +345,19 @@
     color: white
 }
 .service .iconone{
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     padding: 20px;
     border-radius: 50%;
     text-align: center;
-    color: orange;
     margin: 0 auto;
     transition: all 0.5s linear;
 }
+.iconone img{
+    width: 100%;
+}
+
+/*
 .service .iconone i{
     margin: 10px
 }
@@ -370,6 +369,7 @@
     background-color: orange;
     color: white;
 }
+*/
 .service .icons p{
     font-size: 15px;
     font-weight: bolder;
@@ -448,6 +448,7 @@ P{
 }
 .clients .h1 , p{
         font-weight: bolder;
+	font-size: 15px;
 }
 .clients .clientone{
     padding: 20px;
@@ -490,6 +491,7 @@ P{
     text-align: left;
     padding: 30px;
     color: #515554;
+	    min-height: 500px;
 }
 .form h4{
     font-weight: bolder
@@ -590,4 +592,101 @@ form button{
 h2.h1.wow.bounceInUp {
     padding: 0;
     margin: 0;
+}
+label.screen-reader-text {
+    display: none;
+}
+aside#polylang-2 {
+    padding: 0px;
+    display: inline;
+    padding-right: 21px;
+}
+select#lang_choice_polylang-2 {
+    padding: 4px 20px;
+    font-size: 20px;
+    background-color: #333;
+    color: #fff;
+}
+img.article_photo_img {
+    width: 97%;
+}
+time.article__time {
+    position: absolute;
+    top: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    right: 0;
+}
+.article_item {
+    width: 106%;
+	text-decoration: none;
+}
+a.article_title {
+    font-size: 20px;
+    padding: 10px;
+    display: block;
+    text-align: left;
+	text-decoration: none;
+    color: #f68520;
+}
+.article_intro {
+    text-align: left;
+    line-height: 25px;
+	text-decoration: none;
+}
+a.article__more {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    display: inline-block;
+	text-decoration: none;
+}
+.clients p {
+    padding-bottom: 10px;
+    display: block;
+}
+a.socal {
+    color: #333;
+    margin: 12px;
+    padding: 0;
+    display: inline-block;
+}
+.carousel {
+    position: relative;
+    margin-top: 102px;
+}
+.carousel-control {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 7%;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: none;
+    background-color: rgba(0, 0, 0, 0);
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+.col-md-12.entry-media {
+    margin: 20px 0;
+}
+.col-md-12.entry-media img{
+    margin: auto;
+}
+.col-md-12.main_news {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+	    padding: 30px 0;
+}
+.contact a {
+    color: #fff;
+    background-color: #ffa500;
+    border-radius: 5px;
+	text-decoration: none;
+    padding: 8px 30px;
 }

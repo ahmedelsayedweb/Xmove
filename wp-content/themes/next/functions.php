@@ -19,6 +19,7 @@ function ahmed_add_styles() {
 	wp_enqueue_style('animate', get_template_directory_uri() . '/assets/css/animate.css');
 	wp_enqueue_style('carousel', get_template_directory_uri() . '/assets/css/owl.carousel.min.css');
 	wp_enqueue_style('default', get_template_directory_uri() . '/assets/css/owl.theme.default.min.css');
+	wp_enqueue_style('nstSlidermin', get_template_directory_uri() . '/assets/css/jquery.nstSlider.min.css');
 	wp_enqueue_style('css', get_template_directory_uri() . '/assets/css/css.css');
 }
 /*
@@ -35,6 +36,8 @@ function ahmed_add_scripts() {
 	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/assets/js/typed.min.js', array() , false, true);
 	wp_enqueue_script('doubletaptogo', get_template_directory_uri() . '/assets/js/wow.min.js', array() , false, true);
 	wp_enqueue_script('waypoints', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array() , false, true);
+	wp_enqueue_script('nstSlider', get_template_directory_uri() . '/assets/js/jquery.nstSlider.min.js', array() , false, true);
+	wp_enqueue_script('slick', get_template_directory_uri() . '/assets/js/slick.min.js', array() , false, true);
 	wp_enqueue_script('flowplayer', get_template_directory_uri() . '/assets/js/js.js', array() , false, true);
 	wp_enqueue_script('html5shiv', get_template_directory_uri() . '/js/html5shiv.min.js');
 	wp_script_add_data('html5shiv','conditional','lt IE 9');
@@ -136,3 +139,80 @@ add_action( 'wp_enqueue_scripts', 'ahmed_add_styles' );
 add_action( 'wp_enqueue_scripts', 'ahmed_add_scripts' );
 add_action( 'init', 'custom_menu' );
 
+function twentyfifteen_widgets_init() {
+	register_sidebar( array(
+		'name'          => __( 'Widget Area', 'twentyfifteen' ),
+		'id'            => 'sidebar-1',
+		'description'   => __( 'Add widgets here to appear in your sidebar.', 'twentyfifteen' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'twentyfifteen_widgets_init' );
+/*
+** Add Actions
+** Added By @Ahmed ELsayed
+** add_action()
+*/
+
+add_action( 'init', 'custom_menu' );
+
+register_sidebar( array(
+'name' => 'Footer Sidebar 1',
+'id' => 'footer-sidebar-1',
+'description' => 'Appears in the footer area',
+'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+'after_widget' => '</aside>',
+'before_title' => '<h3 class="footer-section__title">',
+'after_title' => '</h3>',
+) );
+register_sidebar( array(
+'name' => 'Footer Sidebar 2',
+'id' => 'footer-sidebar-2',
+'description' => 'Appears in the footer area',
+'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+'after_widget' => '</aside>',
+'before_title' => '<h3 class="footer-section__title">',
+'after_title' => '</h3>',
+) );
+register_sidebar( array(
+'name' => 'Header',
+'id' => 'header',
+'description' => 'Appears in the footer area',
+'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+'after_widget' => '</aside>',
+) );
+function my_post_templater($template){
+  if( !is_single() )
+    return $template;
+  global $wp_query;
+  $c_template = get_post_meta( $wp_query->post->ID, '_wp_page_template', true );
+  return empty( $c_template ) ? $template : $c_template;
+}
+
+add_filter( 'template', 'my_post_templater' );
+
+function give_my_posts_templates(){
+  add_post_type_support( 'post', 'page-attributes' );
+}
+add_action( 'init', 'give_my_posts_templates' );
+//added by Elsayed to translate to arabic
+function agus_change_translate_text( $translated_text ) {
+    $lang = custom_get_current_lang();
+    $return_item = $translated_text;
+    $transalte_items = $GLOBALS['transalte_items'];
+    if($lang == 'ar'){
+        if(isset($transalte_items[$translated_text])){
+            $return_item = $transalte_items[$translated_text];
+        }
+    }
+    return $return_item;
+}
+add_filter( 'gettext', 'agus_change_translate_text', 20 );
+//added by Elsayed to get current language
+function custom_get_current_lang(){
+    $lang = ICL_LANGUAGE_CODE;
+    return $lang;
+}
